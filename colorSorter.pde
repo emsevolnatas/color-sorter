@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 PFont f;
-char c = 'B';
+char c = 'G';
 int n = 255;
 final int WIDTH = 600;
 final int HEIGHT = 600;
@@ -44,10 +44,11 @@ void draw() {  // draw() loops forever, until stopped
       default : stroke(temp); break;
     }
     
-    strokeWeight(10);
+    strokeWeight(7);
     line(WIDTH/2,HEIGHT/2,x,y);
   } 
   fill(color(255,0,0));  
+  textFont(f,200);
   text(message,WIDTH/2,HEIGHT/2);
 }
 
@@ -69,13 +70,13 @@ public void triRapide(int[] tab, int iDep, int iFin) {
  * On peut également le faire de manière arbitraire ou aléatoire
  * @return le point de pivot
  */
-public static int partitioner(int[] tab, int iDep, int iFin) {
+ int partitioner(int[] tab, int iDep, int iFin) {
     int pivot = tab[iFin];
     int i = iDep;
     for (int j = iDep; j < iFin; j++)
         if(tab[j]<pivot)
             permuter(tab, i++, j);
-    
+
     permuter(tab, i, iFin);
     return i;
 }
