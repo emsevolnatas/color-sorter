@@ -1,4 +1,4 @@
 void keyPressed() {
-  if(key == ' ') sortCircle();
+  if(key == ' ') thread("sortCircle");
   message = "WOW!";
 }

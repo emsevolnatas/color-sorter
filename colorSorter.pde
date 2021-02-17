@@ -49,7 +49,7 @@ void draw() {  // draw() loops forever, until stopped
   } 
   fill(color(255,0,0));  
   textFont(f,200);
-  text(message,WIDTH/2,HEIGHT/2);
+  // text(message,WIDTH/2,HEIGHT/2);
 }
 
 void sortCircle() {
@@ -58,6 +58,7 @@ void sortCircle() {
 
 public void triRapide(int[] tab, int iDep, int iFin) {
     if(iDep<iFin) {
+        try { Thread.sleep(1); } catch (Exception e){}
         int p = partitioner(tab, iDep, iFin);
         triRapide(tab, iDep, p-1);
         triRapide(tab, p+1, iFin);
@@ -86,4 +87,5 @@ private static void permuter(int[] tab, int i, int j) {
     int temp = tab[i];
     tab[i] = tab[j];
     tab[j] = temp;
+    try { Thread.sleep(5); } catch (Exception e){}
 }
